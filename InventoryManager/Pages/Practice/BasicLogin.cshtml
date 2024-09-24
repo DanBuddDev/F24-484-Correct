@@ -1,0 +1,21 @@
+﻿@page
+@model InventoryManager.Pages.Practice.BasicLoginModel
+@{
+}
+<a asp-page="UserLanding" asp-route-username="testuser">Force a login -></a>
+
+@{
+    if (Model.Message != null)
+    {
+        <p class="text-danger">@Model.Message</p>
+    }
+}
+<form asp-page="BasicLogin">
+    <label asp-for="Username"></label>
+    <input asp-for="Username" class="form-control"/>
+    <br />
+    <label asp-for="Password"></label>
+    <input asp-for="Password" class="form-control" />
+    <br/>
+    <input type="submit" value="Login" />
+</form>

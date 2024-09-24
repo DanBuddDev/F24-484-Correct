@@ -1,0 +1,24 @@
+﻿@page
+@model InventoryManager.Pages.Practice.DisplayNameModel
+@{
+}
+
+@{
+    if (Model.FirstName == null)
+    {
+        <form asp-page="DisplayName">
+            <input asp-for="FirstName" placeholder=" = Type First Name:" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+            <br />
+            <input asp-for="SecondName" placeholder="Type Second Name:" />
+            <span asp-validation-for="SecondName" class="text-danger"></span>
+            <br />
+            <input type="submit" value="Submit your name ->/" />
+            <button asp-page="DisplayName"  asp-page-handler="PopulateHandler" formnovalidate>Populate</button>
+        </form>
+    }
+    else
+    {
+        <p>My name is: @Model.FirstName @Model.SecondName</p>
+    }
+}

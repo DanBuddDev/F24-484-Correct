@@ -1,0 +1,18 @@
+﻿@page
+@model InventoryManager.Pages.Labs.PracticeProblemAModel
+@{
+}
+
+@{
+    <form asp-page="PracticeProblemA">
+        <input asp-for="FirstNum" placeholder="Please enter a number: " />
+        <span asp-validation-for="FirstNum" class="text-danger"></span>
+        <br />
+        <input asp-for="SecondNum" placeholder="Please enter a number: " />
+        <span asp-validation-for="SecondNum" class="text-danger"></span>
+        <br />
+        <input type="submit" value="Add" />
+    </form>
+    
+    <p>The current value of the added numbers is @Model.NumSum</p>
+}

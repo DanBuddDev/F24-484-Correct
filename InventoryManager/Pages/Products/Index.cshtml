@@ -1,0 +1,32 @@
+﻿@page
+@model InventoryManager.Pages.Products.IndexModel
+@{
+    ViewData["Title"] = "Product Listing";
+}
+
+<h2>Product View</h2>
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>Product ID:</th>
+            <th>Product Name:</th>
+            <th>Product Cost:</th>
+            <th>Product Description:</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var prod in Model.ProductInventory)
+            {
+                <tr>
+                    <td class="text-danger">@prod.ProductID</td>
+                    <td>@prod.ProductName</td>
+                    <td>@prod.ProductCost</td>
+                    <td>@prod.ProductDescription</td>
+                    <td><a asp-page="EditProducts" class="btn btn-primary" asp-route-productid="@prod.ProductID">Edit</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
